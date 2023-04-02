@@ -1,6 +1,6 @@
-package service;
+package ObserverBot.service;
 
-import config.BotConfig;
+import ObserverBot.config.BotConfig;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -48,7 +48,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void startCommandRecived(long chatId, String name) {
 
-        String answer = "Hi, " + name + "nice to meet you!";
+        String answer = String.format("Hi, %s nice to meet you!", name);
 
         sendMessage(chatId, answer);
     }
